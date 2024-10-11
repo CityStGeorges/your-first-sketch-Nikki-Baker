@@ -23,7 +23,12 @@ void draw() {
   stroke(240, 232, 218);
   strokeWeight(6);
   line(10+x, 40+y, mouseX, mouseY);
-  line(10+x, 40+y, mouseX, mouseY);
-  line(10+x, 40+y, mouseX, mouseY);
-  text("Nob", 120,150);
+  if (mouseX > width/2){
+    fill(255, 0,0);
+  }
+  else{
+    fill(0,255,0);
+  }
+  textSize(35);
+  text("Nob", 120,180);
 }
