@@ -34,6 +34,8 @@ public class Main {
 
         // gets array of random unique indexes with size noOfMembers
         int[] randMembersIndex = new int[noOfMembers];
+        // set default value to -1
+        Arrays.fill(randMembersIndex, -1);
 
         for(int i=0; i<noOfMembers; i++){
 
@@ -43,7 +45,6 @@ public class Main {
 
                 // generate random index
                 int randomInt = ThreadLocalRandom.current().nextInt(0,7);
-                System.out.println(randomInt);
 
                 // check if unique, if unique success = true (no loop) add value to arr, if not unique, repeat
                 if(IntStream.of(randMembersIndex).noneMatch(x -> x == randomInt)){
@@ -53,7 +54,6 @@ public class Main {
 
             }
         }
-        System.out.println(Arrays.toString(randMembersIndex));
 
         // instantiate members based on index
         int index;
