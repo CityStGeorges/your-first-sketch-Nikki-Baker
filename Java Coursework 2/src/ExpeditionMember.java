@@ -1,14 +1,21 @@
 public class ExpeditionMember {
     private String memberName;
     private int memberID;
-    static int memberCount = 0;
+    private static int memberCount = 0;
 
+    public ExpeditionMember(){
+        memberName = "";
+        memberID = 0;
+        memberCounter();
+    }
 
-    ExpeditionMember(String Name, int ID){
+    public ExpeditionMember(String Name, int ID){
         memberName = Name;
         memberID = ID;
         memberCounter();
     }
+
+
 
     public void setName(String a){
         memberName = a;
@@ -26,7 +33,11 @@ public class ExpeditionMember {
         return memberID;
     }
 
-    static void memberCounter(){
+    private static void memberCounter(){
         ++memberCount ;
+    }
+
+    static int getMemberCount(){
+        return memberCount;
     }
 }
